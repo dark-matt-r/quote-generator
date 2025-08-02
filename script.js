@@ -51,7 +51,7 @@ function newQuote() {
 }
 
 async function getQuotes() {
-  // showLoadingText();
+  showLoadingText();
   const apiUrl = "https://jacintodesign.github.io/quotes-api/data/quotes.json";
   try {
     const response = await fetch(apiUrl);
@@ -62,7 +62,7 @@ async function getQuotes() {
   } catch (error) {
     console.error("Error fetching quotes:", error);
   }
-  // hideLoadingText();
+  hideLoadingText();
 }
 
 // https://twitter.com/intent/tweet
