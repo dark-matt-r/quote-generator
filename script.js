@@ -1,7 +1,8 @@
-// console.log("Hello, World!");
-
+//A list of all the quotes needed.
+// It will be populated from the Internet.
 let apiQuotes = [];
 
+// Get the elements from the HTML.
 const quoteContainer = document.getElementById("quote-container");
 const quoteText = document.getElementById("quote");
 const authorText = document.getElementById("author");
@@ -11,28 +12,19 @@ const loader = document.getElementById("loader");
 
 // Show loading text.
 function showLoadingText() {
-  // loader.hidden = false;
-  // quoteContainer.hidden = true;
+  // Hide quote text and author.
   quoteContainer.style.display = "none";
+  // Show loader.
   loader.style.display = "block";
 }
 
 // Hide loading text.
 function hideLoadingText() {
-  // if (!loader.hidden) {
-  //   quoteContainer.hidden = false;
-  //   loader.hidden = true;
-  // }
+  // Hide loader.
   loader.style.display = "none";
+  // Show quote text and author.
   quoteContainer.style.display = "block";
 }
-
-// quoteContainer.textContent = "Hello, World!";
-// loader.textContent = "jhg";
-// console.log("Test");
-// hideLoadingText();
-// loader.hidden = true;
-// loader.style.display = "none";
 
 function newQuote() {
   showLoadingText();
@@ -50,14 +42,18 @@ function newQuote() {
   }
 }
 
+// Fetch quotes from API and display a random quote.
+// This function is asynchronous, meaning it will run in the background and not block the main thread.
 async function getQuotes() {
   showLoadingText();
   const apiUrl = "https://jacintodesign.github.io/quotes-api/data/quotes.json";
   try {
+    // Fetch quotes from API.
     const response = await fetch(apiUrl);
     apiQuotes = await response.json();
     console.log(newQuote());
-    // hideLoadingText();
+    hideLoadingText();
+    // Call newQuote to display a quote when the page loads.
     newQuote();
   } catch (error) {
     console.error("Error fetching quotes:", error);
@@ -67,18 +63,15 @@ async function getQuotes() {
 
 // https://twitter.com/intent/tweet
 // https://x.com/intent/post
+// Share quote on Twitter.You could replace this with the X URL above.
 function tweetQuote() {
   const twitterUrl = `https://twitter.com/intent/tweet?text=${quoteText.textContent} - ${authorText.textContent}`;
   window.open(twitterUrl, "_blank");
 }
 
+// Event listeners.
 newQuoteBtn.addEventListener("click", newQuote);
 twitterBtn.addEventListener("click", tweetQuote);
 
+// Run the program.
 getQuotes();
-// showLoadingText();
-// hideLoadingText();
-console.log("Test");
-
-// console.log(apiQuotes);
-// newQuote();
