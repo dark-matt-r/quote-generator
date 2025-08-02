@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='18' viewBox='0 0 100 18'%3E%3Cpath fill='%2360bab9' fill-opacity='0.39' d='M61.82 18c3.47-1.45 6.86-3.78 11.3-7.34C78 6.76 80.34 5.1 83.87 3.42 88.56 1.16 93.75 0 100 0v6.16C98.76 6.05 97.43 6 96 6c-9.59 0-14.23 2.23-23.13 9.34-1.28 1.03-2.39 1.9-3.4 2.66h-7.65zm-23.64 0H22.52c-1-.76-2.1-1.63-3.4-2.66C11.57 9.3 7.08 6.78 0 6.16V0c6.25 0 11.44 1.16 16.14 3.42 3.53 1.7 5.87 3.35 10.73 7.24 4.45 3.56 7.84 5.9 11.31 7.34zM61.82 0h7.66a39.57 39.57 0 0 1-7.34 4.58C57.44 6.84 52.25 8 46 8S34.56 6.84 29.86 4.58A39.57 39.57 0 0 1 22.52 0h15.66C41.65 1.44 45.21 2 50 2c4.8 0 8.35-.56 11.82-2z'%3E%3C/path%3E%3C/svg%3E");
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: #60bab9;
+  color: #2c7271;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quote-container {
+  width: auto;
+  max-width: 900px;
+  padding: 20px 30px;
+  border-radius: 10px;
+  background-color: rgba(96, 186, 185, 0.8);
+  color: #ffffff;
+  box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.quote-text {
+  font-size: 2.2rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.long-quote {
+  font-size: 1.8rem;
+  line-height: 1.4;
+}
+
+.fa-quote-left {
+  font-size: 3.3rem;
+  color: #ffffff;
+  margin-right: 10px;
+}
+
+.quote-author {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-top: 10px;
+  font-style: "italic";
+}
+
+.author {
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.twitter-button {
+  background-color: #2c7271;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.button-container button {
+  background-color: #2c7271;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 0 #ffffff;
+}
+
+.button-container button:hover {
+  filter: brightness(1.3);
+  /* background-color: #2c7271;
+  opacity: 0.8; */
+}
+
+.button-container button:active {
+  box-shadow: 0 0px 0 #ffffff;
+  transform: translateY(4px);
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  color: white;
+}
+
+.loading-p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-shadow: 0 0 10px #2c7271;
+  animation: dot-blink 1.5s infinite;
+  overflow: hidden;
+}
+
+@keyframes dot-blink {
+  0% {
+    transform: scale(0%);
+  }
+  100% {
+    transform: scale(1000%);
+  }
+}
+
+/* Media Query */
+@media screen and (max-width: 1000px) {
+  .quote-container {
+    margin: auto 10px;
+  }
+
+  .quote-text {
+    font-size: 1.8rem;
+  }
+
+  .long-quote {
+    font-size: 1.5rem;
+  }
+
+  .fa-quote-left {
+    font-size: 2.5rem;
+  }
+
+  .quote-author {
+    font-size: 1.5rem;
+  }
+}
