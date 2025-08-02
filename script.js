@@ -13,8 +13,8 @@ const loader = document.getElementById("loader");
 function showLoadingText() {
   // loader.hidden = false;
   // quoteContainer.hidden = true;
-  loader.style.display = "block";
   quoteContainer.style.display = "none";
+  loader.style.display = "block";
 }
 
 // Hide loading text.
